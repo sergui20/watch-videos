@@ -13,8 +13,8 @@ class SearchContainer extends Component {
     }
 
     handleSubmit = (ev) => {
-        ev.preventDefault(); // Para prevenir la accion por defecto, que es la de refrescar la pagina
-        this.props.searchAsyncEntities(this.input.value) // Accion que viene en las propiedades gracias a mapDispatchToProps
+        ev.preventDefault();
+        this.props.searchAsyncEntities(this.input.value)
     }
 
     getInput = (input) => {
@@ -40,4 +40,4 @@ const mapDispatchToProps = {
     searchAsyncEntities
 }
 
-export default connect(null, mapDispatchToProps)(SearchContainer); // Aqui como no requiero de datos de mi store, no declaro la funcion mapStateToProps, y simplemente conecto mi SearchContainer con el store general de la aplicacion
+export default connect(null, mapDispatchToProps)(SearchContainer);
