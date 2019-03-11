@@ -18,8 +18,8 @@ class VideoPlayer extends Component {
         duration: 0,
         currentTime: 0,
         loading: false,
-        lastVolume: 1, // Variable que guarda el volumen asignado anteriormente
-        volume: 1 // Volumen en tiempo real, es decir, el volumen que controla el sonido.
+        lastVolume: 1,
+        volume: 1
     }
 
     toggleVideo = (ev) => {
@@ -28,7 +28,7 @@ class VideoPlayer extends Component {
         })
     }
 
-    componentDidMount() { // Funcion que se dispara cuando todo lo del render se ha montado
+    componentDidMount() {
         this.setState({
             pause: !this.state.pause,
         })
@@ -75,7 +75,7 @@ class VideoPlayer extends Component {
         })
     }
 
-    handleReady = (ev) => { // Se dispara cuando el video este listo para reproducirse
+    handleReady = (ev) => {
         this.setState({
             loading: false
         })
@@ -123,7 +123,7 @@ class VideoPlayer extends Component {
     }
 
     render() {
-        return ( // Las propiedades del <Video> van a cambiar, pause se va a volver falso, al ocurrir esto se llama a la funcion componentWillReceiveProps, dentro del componente video
+        return (
             <VideoPlayerLayout setRef={this.setRef}>
                 <Title title={this.props.media.get('title')}></Title>
                 <Controls>
