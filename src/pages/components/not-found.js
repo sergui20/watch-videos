@@ -2,9 +2,9 @@ import React, { PureComponent } from 'react';
 import './generic-page.css';
 
 class NotFound extends PureComponent {
-    backwardClick = () => { // Dentro de los componentes que renderizamos por medio de React-Router, encontramos en sus props metodos como history. Y este cuenta a su vez con propiedades y metodos
-        this.props.history.goBack(); //goBack navega hacia la pagina anterior
-        // this.props.history.go(-2); //go navega de acuerdo al valor que le pongamos como metodo
+    backwardClick = () => {
+        this.props.history.goBack();
+        // this.props.history.go(-2);
     }
 
     forwardClick = () => {
