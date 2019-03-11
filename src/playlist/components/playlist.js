@@ -14,7 +14,6 @@ import './playlist.css';
 //     }
 // }
 
-// Mejor usamos componentes funcionales, que son basicamente funciones, ya que simplemente se encargan del UI y no tienen ciclo de vida. Simplemente nos retornan un valor
 function Playlist (props) {
     // console.log(props)
     return (
