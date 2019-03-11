@@ -4,7 +4,7 @@ import data from './data';
 import modal from './modal';
 import loader from './loader';
 
-const rootReducer = combineReducers({ // Es un objeto donde almacenamos nuestros reducers
+const rootReducer = combineReducers({
     data,
     modal,
     loader
