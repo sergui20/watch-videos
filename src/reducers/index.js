@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux-immutable'; // Simplemente para combinar nuestros reducers y hacerlos immutales
+import { combineReducers } from 'redux-immutable';
 
 import data from './data';
 import modal from './modal';
