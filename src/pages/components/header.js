@@ -3,8 +3,7 @@ import './header.css';
 import { NavLink } from 'react-router-dom';
 import logo from '../../../images/logo.png';
 
-import { withRouter } from 'react-router'; // Agrega propiedades y metodos a componentes que no formen parte de react-router.
-
+import { withRouter } from 'react-router';
 class Header extends Component {
     handleClick = () => {
         this.props.history.goBack();
@@ -17,7 +16,7 @@ class Header extends Component {
                 <nav>
                     <ul>
                         <li>
-                            <NavLink exact to="/" activeClassName="is-selected"> {/* Exact porque no queremos que forme parte de las demas rutas. Es decir, queremos que cada ruta sea independiente*/}
+                            <NavLink exact to="/" activeClassName="is-selected">
                                 Inicio
                             </NavLink>
                         </li>
