@@ -5,11 +5,10 @@ import './media.css';
 // React-router
 import { Link } from 'react-router-dom';
 
-                                    // PureComponent pueden usarse para componentes que se tengan que actualizar multiples veces, en este caso nuestro Media lo require, asi no tenemos que validar la actualizacion y se optimiza nuestra app
-class Media extends PureComponent { // Se puede utilizar React.Component o simplemente Component para componentes de estado, pero para componentes puros (componentes que tienen shouldComponentUpdate ya integrado) se usa PureComponent
-    // constructor(props){ // Es un metodo llamado en el momento de la creacion de instancias. Se llama al principio cuando se carga nuestro componente en el DOM
-    //     super(props) //Super llama al constructor de una clase padre, en este caso le pasamos los props de la clase Media
-    //     // this.handleClick = this.handleClick.bind(this) // Aqui hacemos bind o enlazamos a Media para poder definir props, ya que solo se encuentran dentro de ella
+class Media extends PureComponent {
+    // constructor(props){ 
+    //     super(props) 
+    //     // this.handleClick = this.handleClick.bind(this)
     //     this.state = {
     //         author: props.author
     //     }
@@ -28,7 +27,7 @@ class Media extends PureComponent { // Se puede utilizar React.Component o simpl
                 border: '1px solid red'
             }
         }
-        return ( // onClick={this.handleClick} propiedad que tenia Media
+        return (
            <Link to={{
                pathname: '/videos',
                search: `?id=${this.props.id}`,
@@ -48,21 +47,13 @@ class Media extends PureComponent { // Se puede utilizar React.Component o simpl
         )
     }
     handleClick = (ev) => {
-        // console.log(this.props.title) // this.props.title esta declarado en la clase Media, lo enlazamos gracias al metodo bind
+        // console.log(this.props.title)
         this.props.openModal(this.props.id);
     }
-
-    // handleClick = (ev) => {     // Las arrow-functions heredan por defecto el contexto de su padre, asi podemos acceder a los props de Media facilmente
-    //     // console.log(this.props.title)
-    //     this.setState({
-    //         author: 'Ricardo Celis'
-    //     })
-    // }
 }
 
-// Sirve para validar que tipo de dato es en especifico, tambien para especificar si es requerido o no el dato. Se puede tambien validar si el dato tiene dos o mas tipos
-Media.propTypes = { // Se escribe la primera letra con minusculas propTypes por ser un metodo de la clase Media
-    cover: PropTypes.string, // Aqui se escribe con mayusculas porque lo estamos requiriendo
+Media.propTypes = {
+    cover: PropTypes.string,
     title: PropTypes.string.isRequired,
     author: PropTypes.string
 }
