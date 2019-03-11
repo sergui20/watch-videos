@@ -10,8 +10,8 @@ class Video extends Component {
         }
     }
 
-    componentWillReceiveProps(nextProps) { // Se llama despues montarse el video (se re-renderiza) porque cambia el estado de pause
-        if( nextProps.pause !== this.props.pause ) { // Se valida si en verdad se cambiaron las propiedades
+    componentWillReceiveProps(nextProps) {
+        if( nextProps.pause !== this.props.pause ) {
             this.togglePlay()
         }
     }
@@ -22,7 +22,7 @@ class Video extends Component {
 
     render() {
         const { handleLoadedMetadata, handleTimeUpdate, handleSeeking, handleSeeked, handleReady } = this.props;
-        return ( // Finalmente renderiza el video con las propiedades ya actualizadas
+        return (
             <div className="Video">
                 <video src={this.props.src} autoPlay={this.props.autoplay} ref={this.setRef} onLoadedMetadata={handleLoadedMetadata} onTimeUpdate={handleTimeUpdate} onSeeking={handleSeeking} onSeeked={handleSeeked} onCanPlayThrough={handleReady}></video>
             </div>
