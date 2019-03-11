@@ -4,7 +4,7 @@ import './search.css';
 import { Prompt } from 'react-router';
 
 function Search (props) {
-    return ( // con el atributo ref almacenamos en react un elemento HTML
+    return (
         <form action="" className="Search" onSubmit={props.handleSubmit}> 
             <Prompt when={props.prompt} message="¿Estás seguro de querer abandonar la página?"></Prompt>
             <input ref={props.setRef} type="text" name="search" className="Search-input" placeholder="Buscar videos" value={props.value} onChange={props.handleChange}></input>
