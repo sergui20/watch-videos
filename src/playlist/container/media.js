@@ -9,7 +9,7 @@ import { openModal } from '../../actions/index';
 
 class MediaContainer extends Component {
     openModal = (id) => {
-        // this.props.dispatch( // Dispatch porque ya viene como propiedad en el componente
+        // this.props.dispatch(
         //     openModal(id)
         // )
         this.props.openModal(id)
